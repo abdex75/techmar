@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shop - TechMar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">TechMar</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html" class="nav-link">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="menu-btn">☰</div>
+    <a class="cart-icon" href="cart.html">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cartCount">0</span>
+    </a>
+  </header>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> > Shop
+  </div>
+
+  <div class="search-box" style="padding: 1rem 5%;">
+    <input type="text" id="searchInput" placeholder="Search gadgets..." onkeyup="searchProducts()">
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="audio">Audio</button>
+    <button class="filter-btn" data-filter="wearables">Wearables</button>
+    <button class="filter-btn" data-filter="power">Power</button>
+    <button class="filter-btn" data-filter="gaming">Gaming</button>
+  </div>
+
+  <main class="products" id="products"></main>
+
+  <div class="back-to-top">↑</div>
+
+  <footer>
+    <p>&copy; 2025 TechMar. All rights reserved. | <a href="privacy.html">Privacy</a></p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    function displayProducts(prods) {
+      document.getElementById('products').innerHTML = '';
+      prods.forEach(p => {
+        const el = document.createElement('div');
+        el.classList.add('product');
+        el.innerHTML = `
+          <img src="${p.image}" alt="${p.name}">
+          <div class="product-info">
+            <h3>${p.name}</h3>
+            <p>${p.desc}</p>
+            <div class="price">$${p.price.toFixed(2)}</div>
+            <button class="add-to-cart" onclick="addToCart(${p.id})">Add to Cart</button>
+          </div>
+        `;
+        document.getElementById('products').appendChild(el);
+      });
+    }
+
+    function searchProducts() {
+      const term = document.getElementById('searchInput').value.toLowerCase();
+      const filtered = products.filter(p => p.name.toLowerCase().includes(term) || p.desc.toLowerCase().includes(term));
+      displayProducts(filtered);
+    }
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        if (filter === 'all') displayProducts(products);
+        else displayProducts(products.filter(p => p.category === filter));
+      });
+    });
+
+    displayProducts(products);
+  </script>
+</body>
+</html>

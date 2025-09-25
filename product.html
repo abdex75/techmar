@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Product - TechMar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">TechMar</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+    <div class="menu-btn">☰</div>
+    <a class="cart-icon" href="cart.html">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cartCount">0</span>
+    </a>
+  </header>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> > <a href="shop.html">Shop</a> > Product
+  </div>
+
+  <section class="product-detail">
+    <div class="product-images">
+      <img src="https://images.unsplash.com/photo-1590523277543-a94c05e6a863?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Wireless Earbuds" class="main-image" id="mainImage">
+      <div class="thumb-images">
+        <img src="https://images.unsplash.com/photo-1590523277543-a94c05e6a863?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="active" alt="Wireless Earbuds" onclick="changeImage(this)">
+        <img src="https://images.unsplash.com/photo-1572536147248-ac59a9782acc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Wireless Earbuds" onclick="changeImage(this)">
+        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Wireless Earbuds" onclick="changeImage(this)">
+      </div>
+    </div>
+    <div class="product-info-detail">
+      <h1>Wireless Earbuds Pro</h1>
+      <div class="price">$89.99</div>
+      <p>Noise-cancelling wireless earbuds with 20-hour battery life, premium sound, and touch controls.</p>
+      <div class="qty-selector">
+        <button onclick="decQty()">-</button>
+        <label for="qty">Select quantity</label>
+        <input type="text" id="qty" value="1" readonly>
+        <button onclick="incQty()">+</button>
+      </div>
+      <button class="btn" onclick="addToCart(1, parseInt(document.getElementById('qty').value))">Add to Cart</button>
+    </div>
+  </section>
+
+  <div style="text-align: center; margin: 2rem;">
+    <a href="shop.html" class="btn btn-outline">← Continue Shopping</a>
+  </div>
+
+  <div class="back-to-top">↑</div>
+
+  <footer>
+    <p>&copy; 2025 TechMar. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    function changeImage(img) {
+      document.getElementById('mainImage').src = img.src;
+      document.querySelectorAll('.thumb-images img').forEach(i => i.classList.remove('active'));
+      img.classList.add('active');
+    }
+    function incQty() {
+      let qty = parseInt(document.getElementById('qty').value);
+      document.getElementById('qty').value = qty + 1;
+    }
+    function decQty() {
+      let qty = parseInt(document.getElementById('qty').value);
+      if (qty > 1) document.getElementById('qty').value = qty - 1;
+    }
+  </script>
+</body>
+</html>

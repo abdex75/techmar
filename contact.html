@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Us - TechMar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">TechMar</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="menu-btn">☰</div>
+    <a class="cart-icon" href="cart.html">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cartCount">0</span>
+    </a>
+  </header>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> > Contact Us
+  </div>
+
+  <main class="contact-form">
+    <h2>We'd Love to Hear From You</h2>
+    <form id="contactForm" onsubmit="return validateForm()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+        <div class="error-msg">Please enter your name.</div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email">
+        <div class="error-msg">Please enter a valid email.</div>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message"></textarea>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </main>
+
+  <div style="text-align: center; padding: 2rem 5%;">
+    <h3>Or Reach Us At</h3>
+    <p>
+      📧 <strong>support@techmar.com</strong><br>
+      📞 +251 91 234 5678<br>
+      📍 Ave. Ste 230, Miami, United states
+    </p>
+  </div>
+
+  <div class="back-to-top">↑</div>
+
+  <footer>
+    <p>&copy; 2025 TechMar. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

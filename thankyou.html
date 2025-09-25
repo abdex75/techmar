@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thank You - TechMar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">TechMar</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+    <div class="menu-btn">☰</div>
+  </header>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> > Order Confirmed
+  </div>
+
+  <section class="hero" style="text-align: center; padding: 5rem 1rem;">
+    <i class="fas fa-check-circle" style="font-size: 5rem; color: #28a745; margin-bottom: 1rem;"></i>
+    <h1>Thank You for Your Order!</h1>
+    <p style="max-width: 600px; margin: 1rem auto;">
+      Your order has been confirmed and is being processed. A confirmation email has been sent to your inbox.
+    </p>
+    <div style="margin: 2rem 0;">
+      <strong>Order #:</strong> TM-<span id="orderNum">1001</span><br>
+      <strong>Expected Delivery:</strong> 3-5 Business Days
+    </div>
+    <div>
+      <a href="index.html" class="btn">Back to Home</a>
+      <a href="shop.html" class="btn btn-outline" style="margin-left: 1rem;">Continue Shopping</a>
+    </div>
+  </section>
+
+  <div style="text-align: center; padding: 2rem;">
+    <h3>Need Help?</h3>
+    <p>Contact us at <a href="mailto:support@techmar.com" style="color: #3E92CC;">support@techmar.com</a></p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 TechMar. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('orderNum').textContent = 1000 + Math.floor(Math.random() * 9000);
+  </script>
+</body>
+</html>

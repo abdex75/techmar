@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Cart - TechMar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">TechMar</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html" class="nav-link">Cart</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="menu-btn">☰</div>
+    <a class="cart-icon" href="cart.html">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cartCount">0</span>
+    </a>
+  </header>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> > <a href="shop.html">Shop</a> > Cart
+  </div>
+
+  <main class="cart-page">
+    <h2>Your Shopping Cart</h2>
+    <table class="cart-table" id="cartItems">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filled by JS -->
+      </tbody>
+    </table>
+
+    <div class="cart-summary">
+      <h3>Order Summary</h3>
+      <div>
+        <span>Subtotal:</span>
+        <span>$<span id="cartSubtotal">0.00</span></span>
+      </div>
+      <div>
+        <span>Shipping:</span>
+        <span>$5.99</span>
+      </div>
+      <div>
+        <strong>Total:</strong>
+        <strong>$<span id="cartTotal">0.00</span></strong>
+      </div>
+      <button class="btn checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="shop.html" class="btn btn-outline">← Continue Shopping</a>
+    </div>
+  </main>
+
+  <div class="back-to-top">↑</div>
+
+  <footer>
+    <p>&copy; 2025 TechMar. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
